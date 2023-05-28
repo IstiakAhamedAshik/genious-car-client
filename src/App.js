@@ -4,7 +4,7 @@ import './App.css'
 
 function App() {
   return (
-    <div>
+    <div className='app mx-auto'>
       <RouterProvider router={router}></RouterProvider>
     </div>
   )

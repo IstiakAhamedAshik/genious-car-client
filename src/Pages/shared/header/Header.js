@@ -6,7 +6,7 @@ const Header = () => {
     <div className='header'>
       <div>
         <Link to='/'>
-          <img style={{ height: '45px' }} src={logo} alt='' srcset='' />
+          <img style={{ height: '65px' }} src={logo} alt='' srcset='' />
         </Link>
       </div>
       <div className='link-header'>

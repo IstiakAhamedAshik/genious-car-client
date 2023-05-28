@@ -1,25 +1,81 @@
+.app {
+  max-width: 1150px;
+}
+
 /* footer */
 .text-back {
   background-color: #1e1e1e;
   color: white;
+  margin-top: 15px;
 }
 /* header */
 .header {
+  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px 15px;
-
   margin-bottom: 15px;
-  margin-top: 10px;
+  top: 0;
+  z-index: 999;
+  background-color: rgb(255, 255, 255);
 }
 .link-header a {
   margin-left: 8px;
   font-size: medium;
-  font-weight: 500;
+  font-weight: 600;
 }
 .btn-header {
   color: red;
   border: 1px solid red;
-  padding: 5px;
+  padding: 8px 14px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+/* bannar */
+
+.btn-circle {
+  background-color: red;
+  margin-left: 10px;
+}
+.carousel-item {
+  width: 100%;
+  height: 600px;
+}
+.carousel-img {
+  width: 100%;
+  height: 600px;
+}
+.carousel-img::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background: linear-gradient(90deg, #151515 0%, rgba(21, 21, 21, 0) 100%);
+  border-radius: 12px;
+}
+.caro-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+/* About */
+.parts-img {
+  position: absolute;
+  top: 100px;
+  left: 140px;
+  border-top: 5px solid rgb(255, 255, 255);
+  border-left: 5px solid rgb(255, 255, 255);
+  border-top-left-radius: 7px;
+}
+/* login */
+.google-btn {
+  margin: 5px 5px;
+  padding: 9px;
+  border-radius: 50%;
+  background-color: rgb(223, 213, 202);
 }
