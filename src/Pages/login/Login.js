@@ -1,11 +1,39 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import logpic from '../../assets/images/login/login.svg'
 import { Link } from 'react-router-dom'
 import { FaGoogle } from 'react-icons/fa'
+import { AuthContext } from '../../context/Authprovider'
+import { GoogleAuthProvider } from 'firebase/auth'
+const provider = new GoogleAuthProvider()
+
 const Login = () => {
+  const { login, loginWithGoogle } = useContext(AuthContext)
+
+  const googleLogin = () => {
+    loginWithGoogle(provider)
+      .then((result) => {
+        const user = result.user
+        console.log(user)
+      })
+      .catch((error) => {
+        console.log('error :', error)
+      })
+  }
+
   const handaleLogin = (event) => {
     event.preventDefault()
-    console.log(1)
+    const form = event.target
+    const email = form.email.value
+    const password = form.password.value
+    login(email, password)
+      .then((result) => {
+        const user = result.user
+        console.log(user)
+        form.reset()
+      })
+      .catch((error) => {
+        console.log('error :', error)
+      })
   }
   return (
     <div className='hero w-full'>
@@ -22,8 +50,10 @@ const Login = () => {
               </label>
               <input
                 type='text'
+                name='email'
                 placeholder='email'
                 className='input input-bordered'
+                required
               />
             </div>
             <div className='form-control'>
@@ -31,9 +61,11 @@ const Login = () => {
                 <span className='label-text'>Password</span>
               </label>
               <input
-                type='text'
+                type='password'
+                name='password'
                 placeholder='password'
                 className='input input-bordered'
+                required
               />
             </div>
             <div className='form-control mt-6'>
@@ -42,7 +74,7 @@ const Login = () => {
           </form>
           <div className='text-center'>
             <p>Or sign Up With</p>
-            <button className='google-btn'>
+            <button className='google-btn' onClick={googleLogin}>
               <FaGoogle />
             </button>
             <p style={{ marginBottom: '7px' }}>

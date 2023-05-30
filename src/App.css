@@ -32,6 +32,14 @@
   font-weight: 500;
   border-radius: 4px;
 }
+.btn-logout {
+  color: rgb(62, 62, 230);
+  border: 1px solid blue;
+  padding: 8px 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  margin-left: 9px;
+}
 /* bannar */
 
 .btn-circle {
