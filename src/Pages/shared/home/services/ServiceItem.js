@@ -1,7 +1,7 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const ServiceItem = (props) => {
-  const { title, img, price } = props.service
+  const { _id, title, img, price } = props.service
   return (
     <div className='card card-compact w-80 bg-base-100 shadow-xl'>
       <figure>
@@ -15,7 +15,9 @@ const ServiceItem = (props) => {
         className='card-actions  justify-end'
         style={{ marginBottom: '20px', marginRight: '20px' }}
       >
-        <button className='btn btn-outline'>Buy Now</button>
+        <Link to={`/cheakout/${_id}`}>
+          <button className='btn btn-outline'>Cheak out</button>
+        </Link>
       </div>
     </div>
   )
